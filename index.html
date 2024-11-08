@@ -8,33 +8,39 @@
   <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-  <div class="wrapper prize 10">
-    <!-- <div class="light"></div> -->
-    <div class="panel">
-      <!-- <div class="sector">
-        <div class="sector-inner">
-          <span>谢谢参与</span>
+    <div class="content">
+        <div class="prize1">
+            <div class="wrapper">
+                <!-- <div class="light"></div> -->
+                <div class="panel">
+                  <!-- <div class="sector">
+                    <div class="sector-inner">
+                      <span>谢谢参与</span>
+                    </div>
+                  </div>  -->
+                  <div class="pointer">选择道具</div>
+                </div>
+              </div>
+              <div class="result">
+            </div>
         </div>
-      </div>  -->
-      <div class="pointer">选择道具</div>
-    </div>
-  </div>
-  <div class="result">
-  </div>
 
-  <div class="wrapper prize6">
-    <!-- <div class="light"></div> -->
-    <div class="panel">
-      <!-- <div class="sector">
-        <div class="sector-inner">
-          <span>谢谢参与</span>
+        <div class="prize2">
+            <div class="wrapper">
+                <!-- <div class="light"></div> -->
+                <div class="panel">
+                  <!-- <div class="sector">
+                    <div class="sector-inner">
+                      <span>谢谢参与</span>
+                    </div>
+                  </div>  -->
+                  <div class="pointer">选择等级</div>
+                </div>
+              </div>
+              <div class="result">
+            </div>
         </div>
-      </div>  -->
-      <div class="pointer">选择等级</div>
     </div>
-  </div>
-  <div class="result">
-  </div>
 
   <script>
     (function(){
@@ -95,7 +101,7 @@
             let nextStatus = (getReward())()
             console.log(nextStatus)
             result.innerHTML = nextStatus.text
-            result.style.display = 'none'
+            result.style.visibility = 'hidden';
             pointer.animate([
             { transform: `rotateZ(${ preDeg[i-1] }deg)` } ,
             { transform: `rotateZ(${ nextStatus.deg }deg)` }
@@ -106,7 +112,7 @@
             pointer.style.transform = `rotateZ(${nextStatus.deg}deg)`
         }
         setTimeout(() => {
-            result.style.display = 'block';
+            result.style.visibility = 'visible';
             onRotation = false;
             console.log('抽奖结束');
         }, 3000);
@@ -174,7 +180,7 @@
             let nextStatus = (getReward())()
             console.log(nextStatus)
             result.innerHTML = nextStatus.text
-            result.style.display = 'none'
+            result.style.visibility = 'hidden';
             pointer.animate([
             { transform: `rotateZ(${ preDeg[i-1] }deg)` } ,
             { transform: `rotateZ(${ nextStatus.deg }deg)` }
@@ -185,7 +191,7 @@
             pointer.style.transform = `rotateZ(${nextStatus.deg}deg)`
         }
         setTimeout(() => {
-            result.style.display = 'block';
+            result.style.visibility = 'visible';
             onRotation = false;
             console.log('抽奖结束');
         }, 3000);
